@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Educação Infantil | Liceu Gloriam Dei</title>
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+
+<header>
+  <div class="container navbar">
+    <img src="image.png" alt="Liceu Gloriam Dei" />
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="ensinoinfantil.html">Educação Infantil</a></li>
+      <li><a href="ensinofundamental.html">Ensino Fundamental</a></li>
+      <li><a href="contato.html">Contato</a></li>
+    </ul>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <h1>Educação Infantil</h1>
+    <p>
+      Um começo sólido, afetuoso e inspirador para toda a jornada escolar.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+
+    <!-- CAROUSEL -->
+    <div class="carousel">
+      <div class="carousel-track">
+        <img src="./img/infantil1.jpg" alt="Sala Infantil" />
+        <img src="./img/infantil2.jpg" alt="Atividades Lúdicas" />
+        <img src="./img/infantil3.jpg" alt="Espaço Recreativo" />
+      </div>
+      <button class="carousel-btn prev">❮</button>
+      <button class="carousel-btn next">❯</button>
+    </div>
+
+    <h2 class="section-title">Nossa Proposta</h2>
+
+    <div class="grid grid-3">
+      <div class="card">
+        <div class="icon">🎨</div>
+        <h3>Aprender Brincando</h3>
+        <p>
+          Atividades lúdicas que desenvolvem criatividade, linguagem, coordenação
+          motora e socialização desde cedo.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🧠</div>
+        <h3>Desenvolvimento Integral</h3>
+        <p>
+          Trabalhamos habilidades cognitivas, emocionais e sociais respeitando o
+          ritmo de cada criança.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">❤️</div>
+        <h3>Ambiente Acolhedor</h3>
+        <p>
+          Um espaço seguro, afetivo e estimulante, onde cada aluno é valorizado.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="highlight">
+  <div class="container highlight-grid">
+    <div>
+      <h3>Metodologia Humanizada</h3>
+      <p>
+        Educação baseada em valores, respeito, empatia e formação do caráter.
+      </p>
+    </div>
+
+    <div>
+      <h3>Infraestrutura Moderna</h3>
+      <p>
+        Ambientes planejados, coloridos e interativos que estimulam a
+        aprendizagem.
+      </p>
+    </div>
+
+    <div>
+      <h3>Equipe Especializada</h3>
+      <p>
+        Professores capacitados, experientes e apaixonados por educar.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="text-align:center;">
+    <h2 class="section-title">Onde aprender é prazer</h2>
+    <p style="max-width:720px;margin:auto;">
+      No Liceu Gloriam Dei, cada criança cresce em um ambiente seguro,
+      estimulante e cheio de descobertas.
+    </p>
+
+    <div class="image-grid">
+      <img src="./img/infantil4.jpg" alt="Brinquedoteca" />
+      <img src="infantil.PNG" alt="Atividades em grupo" />
+      <img src="image1.png" alt="Sala de aula infantil" />
+    </div>
+
+    <a href="contato.html" class="btn">Agende uma visita</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <p>© 2026 Liceu Gloriam Dei — Todos os direitos reservados</p>
+  </div>
+</footer>
+
+<script>
+const track = document.querySelector(".carousel-track");
+const slides = document.querySelectorAll(".carousel img");
+const prevBtn = document.querySelector(".carousel-btn.prev");
+const nextBtn = document.querySelector(".carousel-btn.next");
+
+let index = 0;
+
+function updateCarousel() {
+  track.style.transform = `translateX(-${index * 100}%)`;
+}
+
+nextBtn.addEventListener("click", () => {
+  index = (index + 1) % slides.length;
+  updateCarousel();
+});
+
+prevBtn.addEventListener("click", () => {
+  index = (index - 1 + slides.length) % slides.length;
+  updateCarousel();
+});
+
+setInterval(() => {
+  index = (index + 1) % slides.length;
+  updateCarousel();
+}, 6000);
+</script>
+
+</body>
+</html>
